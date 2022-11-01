@@ -10,6 +10,8 @@ private:
 protected:
 	int room_key;
 public:
+	int address;
+	
 	void it_skill(void)
 		{
 			cout<<"father is a it skill"<<endl;
@@ -30,8 +32,10 @@ public:
 class Son : public Father{
 private:
 	int toy;
-	using Father::room_key;     //子类可以直接访问父类的保护成员，但是外外面不可以用
+	using Father::room_key;     //调整访问控制，将Father的room_key 调整为Son 的private
 public:
+	using Father::room_key;    //调整访问控制，将Father的room_key 调整为Son 的public
+	//using Father::money;       //报错，Son本来就不可以访问Father的private
 	void play_game(void)
 		{
 			cout<<"son like play game"<<endl;

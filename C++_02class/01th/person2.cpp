@@ -91,6 +91,10 @@ int Person::getcount(void)
 }
 
 class Student : public Person{
+private:
+	int grade;
+	int setGrade(int grade) {this->gread = grade;}
+	int getGrade(void)
 	
 
 
